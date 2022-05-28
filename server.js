@@ -1,16 +1,18 @@
 const express = require("express");
-
+const dotenv = require("dotenv");
+dotenv.config();
+const connection = require("./db");
 const app = express();
+const studentRoutes = require("./routes/studentRoutes");
+
 express.urlencoded({
   extended: true,
 });
-
+connection();
 app.use(express.json());
-app.get("/", (req, res) => {
-  res.json({
-    messsage: "hello",
-  });
-});
+
+app.use("/api/student", studentRoutes);
+
 app.listen(8080, () => {
   console.log(`server started`);
 });
