@@ -8,7 +8,10 @@ const studentRoutes = require("./routes/studentRoutes");
 express.urlencoded({
   extended: true,
 });
+
+//databse connection
 connection();
+
 app.use(express.json());
 
 app.use("/api/student", studentRoutes);

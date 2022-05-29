@@ -90,6 +90,7 @@ exports.deleteOneStudentData = async (req, res) => {
 };
 
 //--------------------------------------Mail a student -------------------------------------------
+
 const smtpTransport = nodemailer.createTransport({
   host: process.env.SMTP_HOST,
   port: process.env.SMTP_PORT,
